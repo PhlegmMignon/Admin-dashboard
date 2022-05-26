@@ -1,0 +1,146 @@
+:root {
+    --customBlue: #0793D6;
+    --customGrey: #e2e8f0;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 200px 1fr;
+    height: 100%;
+}
+
+.header {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-template-rows: 2fr 3fr;
+    gap: 30px;
+}
+
+    .headerFlex1 {
+        display: grid;
+        grid-template-columns: 30px 1fr 30px 50px 100px;
+        align-items: center;
+        text-align: left;
+        padding-left: 35px;
+        padding-top: 30px;
+        gap: 7px;
+    }
+
+        .headerFlex1 > svg > path {
+            color: black;
+        }
+
+        input {
+            grid-row: 2 / auto;
+            background-color: var(--customGrey);
+            border-style: none;
+            border-radius: 16px;
+            height: 28px;
+            width: 80%;
+        }
+
+        #smallpfp {
+            height: 45px;
+            width: 45px;
+        }
+
+        
+    .headerFlex2 {
+        display: grid;
+        grid-template-columns: 90px 1fr 200px;
+        align-items: center;
+        gap: 30px;
+        padding-left: 35px;
+    }
+
+        #bigpfp {
+            height: 70px;
+            width: 70px;
+        }
+
+        .greetingBox {
+            text-align: left;
+            width: 80%;
+        }
+
+        .menu > ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+
+.sidebar {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+    grid-template-rows: 60px 260px 130px;
+    gap: 33px;
+    height: 100%;
+    background-color: var(--customBlue);
+    color: white;
+    font-size: 1.3rem;
+    padding-top: 15px;
+    font-weight: 600;
+}
+    .dashboard {
+        display: grid;
+        align-content: center;
+        text-align: left;
+        grid-template-columns: 1fr 3.2fr;
+        
+    }
+
+        #logo {
+            margin-left: 25px;
+        }
+
+        li > svg > path {
+            fill: white;
+        }
+
+        .dashboardText {
+            align-self: center;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+    li > svg:not(#logo) {
+        padding-left: 2.25rem;
+    }
+
+    .sidebar ul {
+        display: grid;
+        gap: 1px;
+    }
+
+    .sidebar > ul > li {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 3.15fr;
+        text-align: left;
+        
+    }
+
+    
+
+.main {
+    display: grid;
+    grid-column: 2 / 3;
+    background-color: var(--customGrey);
+    height: auto;
+}
