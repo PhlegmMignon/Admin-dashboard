@@ -14,6 +14,7 @@
 
 body {
     height: 100vh;
+    min-width: 1135px;
 }
 .container {
     text-align: center;
@@ -27,19 +28,21 @@ body {
     display: grid;
     grid-column: 2 / 3;
     grid-template-rows: 2fr 3fr;
-    gap: 30px;
+    gap: 10px;
+    box-shadow: 0px 3px 5px #C5C5C5;
+    z-index: 1;
 }
 
     .headerFlex1 {
         display: grid;
-        grid-template-columns: 30px 1fr 30px 50px 100px;
+        grid-template-columns: 30px 1fr 30px 50px 150px;
         align-items: center;
         text-align: left;
         padding-left: 35px;
         padding-top: 30px;
-        gap: 7px;
+        gap: 25px;
     }
-
+    
         .headerFlex1 > svg > path {
             color: black;
         }
@@ -49,21 +52,26 @@ body {
             background-color: var(--customGrey);
             border-style: none;
             border-radius: 16px;
-            height: 28px;
-            width: 80%;
+            height: 32px;
+            width: clamp(300px, 80%, 700px);
+            margin-left: -10px;
         }
 
         #smallpfp {
-            height: 45px;
-            width: 45px;
+            height: 50px;
+            width: 50px;
         }
 
+        .smallName {
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
         
     .headerFlex2 {
         display: grid;
-        grid-template-columns: 90px 1fr 200px;
+        grid-template-columns: 90px 1fr 360px;
         align-items: center;
-        gap: 30px;
+        gap: 5px;
         padding-left: 35px;
     }
 
@@ -74,13 +82,41 @@ body {
 
         .greetingBox {
             text-align: left;
-            width: 80%;
         }
 
-        .menu > ul {
+            .greeting {
+                font-size: .8rem;
+                font-weight: 500;
+                margin-bottom: 7px;
+            }
+
+            .tag {
+                font-size: 1.35rem;
+                font-weight: 500;
+            }
+
+
+
+        .menu {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            margin-right: 10px;
+            margin-top: 16px;
+            gap: 10px;
+            
         }
+
+            .menu > btn {
+                display: grid;
+                background-color: var(--customBlue);
+                color: white;
+                height: 38px;
+                width: 95px;
+                border-radius: 20px;
+                align-items: center;    
+                font-weight: 600;            
+                font-size: 1rem;
+            }
 
 
 
@@ -90,7 +126,6 @@ body {
     grid-row: 1 / span 2;
     grid-template-rows: 60px 260px 130px;
     gap: 33px;
-    height: 100%;
     background-color: var(--customBlue);
     color: white;
     font-size: 1.3rem;
@@ -141,6 +176,150 @@ body {
 .main {
     display: grid;
     grid-column: 2 / 3;
+    grid-template-columns: 4.24fr minmax(300px, 1fr);
     background-color: var(--customGrey);
-    height: auto;
+    gap: 26px;
+    padding: 30px 28px;
+    padding-bottom: 75px;
+}
+
+    .projectContainer {
+        display: grid;
+        grid-column: 1 / 2;
+        grid-row: span 2;
+        grid-template-rows: 50px 1fr;
+        align-items: flex-start;
+    }
+
+        .cards {
+            display: grid;
+            grid-row: 2 / 3;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+            .card {
+                display: grid;
+                box-sizing: border-box;
+                grid-template-rows: 1fr 4fr 1fr;
+                height: 235px;
+                max-width: 350px;
+                padding: 28px 28px;
+                text-align: left;
+                background-color: white;
+                border-left: 8px solid orange;
+                border-radius: 8px;
+            }
+
+                .title {
+                    font-weight: 500;
+                    font-size: 1.05rem;
+                }
+
+            h3 {
+                text-align: left;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: 450;
+            }
+
+            .title {
+                color: black;
+            }
+
+            .iconContainer {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 15px;
+                margin-left: 145px;
+                padding-top: 40px;
+            }
+            .iconContainer > svg {
+                width: 30px;
+                height: 40px;
+            }
+
+    .announcementCalendar {
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+    }
+
+    .announcements {
+        display: grid;
+        align-items: center;       
+        grid-column: span 1;
+        grid-template-rows: 50px 1fr;
+    }
+
+        .announcementList {
+            display: grid;
+            gap: 15px;
+            padding: 28px 32px;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        :not(.card) > p {
+            font-size: .75rem;   
+        }
+
+        p {
+            color: #6b7280;
+        }
+
+        h4 {
+            margin-bottom: 4px;
+        }
+
+        .divider {
+            height: 2px;
+            width: 100%;
+            margin: 8px 0px;
+            background-color: var(--customGrey);
+        }
+
+    .calendar {
+        display: grid;
+        grid-column: 2 / 3;
+        grid-template-rows: 50px 1fr;
+        margin-bottom: auto;
+        align-items: center;
+    }
+
+        .calendarContainer {
+            display: grid;
+            grid-template-rows: 1fr .01fr 1f .01fr 1fr;
+            padding: 28px 32px;
+            gap: 15px;
+        }
+
+        .calendarItem {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+        }
+
+        .calendarItem > svg {
+            align-self: center;
+            
+        }
+
+        h1 {
+            font-weight: 500;
+            font-size: 1.05rem;
+            align-self: center;
+            text-align: left;
+        }
+        
+
+        .calendarContainer, .announcementList, .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 3px 3px 8px lightgrey;
+        }
+
+    
+.hide {
+    display: none;
 }
